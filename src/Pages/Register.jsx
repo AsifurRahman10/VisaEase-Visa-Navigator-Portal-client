@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import passport from "../assets/passport.jpg";
 import { useContext, useState } from "react";
 import { FaEye, FaRegEyeSlash } from "react-icons/fa";
@@ -6,6 +6,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 export const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
   const {
     user,
     googleLogin,
@@ -35,6 +36,7 @@ export const Register = () => {
           setUser((prevUser) => {
             return { ...prevUser, displayName: name, photoURL: photo };
           });
+          navigate("/");
         });
       })
       .catch((err) => {

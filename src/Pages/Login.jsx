@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import passport from "../assets/passport.jpg";
 import { useContext, useState } from "react";
 import { FaEye, FaRegEyeSlash } from "react-icons/fa";
@@ -7,6 +7,7 @@ export const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const { user, googleLogin, emailLogin } = useContext(AuthContext);
+  const navigate = useNavigate();
   const handleShowPass = () => {
     setShowPassword(!showPassword);
   };
@@ -19,7 +20,7 @@ export const Login = () => {
     console.log(email, passport);
     emailLogin(email, password)
       .then((res) => {
-        console.log(res);
+        navigate("/");
       })
       .catch((err) => {
         const message = err.message.split(":");
