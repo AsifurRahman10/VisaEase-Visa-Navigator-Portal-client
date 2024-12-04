@@ -10,17 +10,19 @@ import avater3 from "../assets/a-3.jpg";
 import avater4 from "../assets/a-4.jpg";
 export const WhyUs = () => {
   return (
-    <div className="flex justify-between items-center lg:w-9/12 mx-auto lato my-20">
+    <div className="flex flex-col lg:flex-row justify-between items-center w-11/12 lg:w-9/12 mx-auto lato my-10 md:my-20">
       <div className="flex-1">
-        <p className="text-xl font-semibold text-primary">Why choice us</p>
-        <h2 className="text-5xl font-extrabold mt-4">
-          Some reason why you trust VisaEase
-        </h2>
-        <p className="text-gray-600 text-lg mt-2">
-          VisaEase is your trusted partner for hassle-free visa solutions. With
-          expert guidance, reliable support, and a user-friendly process, we
-          make your journey seamless from start to finish.
-        </p>
+        <div className="text-center">
+          <p className="text-xl font-semibold text-primary">Why choice us</p>
+          <h2 className="text-3xl md:text-5xl font-extrabold mt-4">
+            Some reason why you trust VisaEase
+          </h2>
+          <p className="text-gray-600 text-lg mt-2">
+            VisaEase is your trusted partner for hassle-free visa solutions.
+            With expert guidance, reliable support, and a user-friendly process,
+            we make your journey seamless from start to finish.
+          </p>
+        </div>
         <div className="flex gap-4 mt-8">
           <img className="w-20 h-20" src={advice} alt="" />
           <div>
@@ -83,10 +85,9 @@ export const WhyUs = () => {
             </div>
           </div>
 
-          {/* Right Images */}
-          <div className="grid grid-cols-1 gap-4">
-            <img src={passport} className="rounded-lg  w-full h-full" />
-            <img src={happy} className="rounded-lg  w-full h-full" />
+          <div className="grid col-span-2 md:col-span-2 lg:col-span-1 grid-cols-1 gap-4 w-full">
+            <img src={passport} className="rounded-lg w-full h-full" />
+            <img src={happy} className="rounded-lg w-full h-full" />
           </div>
         </div>
       </div>

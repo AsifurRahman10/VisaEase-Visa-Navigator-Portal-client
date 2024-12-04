@@ -13,7 +13,7 @@ export const LatestVisa = () => {
       });
   }, []);
   return (
-    <div className="w-11/12 md:w-9/12 mx-auto my-20">
+    <div className="w-11/12 md:w-9/12 mx-auto my-10 md:my-20">
       <div className="my-10">
         <Title
           title={"Our Latest Visas"}
@@ -22,16 +22,16 @@ export const LatestVisa = () => {
           }
         ></Title>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-10 md:mt-20 ">
         {latestVisas.map((singleVisa) => (
           <VisaCard key={singleVisa._id} singleVisa={singleVisa}></VisaCard>
         ))}
       </div>
       <div className="mt-10 flex justify-center items-center">
         <Link to={"/login"} className="">
-          <button className=" relative btn bg-primary text-white font-bold text-lg lato rounded-lg w-full lg:w-96 h-12 overflow-hidden group">
+          <button className=" relative btn bg-primary text-white font-bold text-lg lato rounded-lg w-full md:w-96 h-12 overflow-hidden group">
             <span className="absolute inset-0 bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-            <span className="relative z-10">Login</span>
+            <span className="relative z-10">See all visas</span>
           </button>
         </Link>
       </div>

@@ -11,9 +11,9 @@ import { Pagination, Autoplay } from "swiper/modules";
 
 export const Testimonials = () => {
   return (
-    <div className="bg-primary py-20 lato">
+    <div className="bg-primary py-10 md:py-20 lato">
       <div className="text-center font-bold mb-10">
-        <h2 className="text-white text-6xl font-bold playfair ">
+        <h2 className="text-white text-4xl md:text-6xl font-bold playfair ">
           Our Testimonials
         </h2>
         <p className="text-2xl font-semibold text-white mt-6">
@@ -21,7 +21,7 @@ export const Testimonials = () => {
           <span className="text-secondary">consultancy.</span>
         </p>
       </div>
-      <div className="w-8/12 mx-auto mt-10">
+      <div className="w-11/12 lg:w-8/12 mx-auto mt-10">
         <Swiper
           slidesPerView={4}
           centeredSlides={true}
@@ -34,9 +34,20 @@ export const Testimonials = () => {
             delay: 5000,
             disableOnInteraction: false,
           }}
+          breakpoints={{
+            1024: {
+              slidesPerView: 4,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            0: {
+              slidesPerView: 1,
+            },
+          }}
         >
           <SwiperSlide>
-            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 h-full lg:h-[225px] flex flex-col">
+            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 flex flex-col h-[225px]">
               <div className="w-full flex mb-4 items-center">
                 <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                   <img src="https://i.pravatar.cc/100?img=1" alt="" />
@@ -64,7 +75,7 @@ export const Testimonials = () => {
           </SwiperSlide>
 
           <SwiperSlide>
-            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 h-full lg:h-[225px] flex flex-col">
+            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 flex flex-col h-[225px]">
               <div className="w-full flex mb-4 items-center">
                 <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                   <img src="https://i.pravatar.cc/100?img=2" alt="" />
@@ -92,7 +103,7 @@ export const Testimonials = () => {
           </SwiperSlide>
 
           <SwiperSlide>
-            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 h-full lg:h-[225px] flex flex-col">
+            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 flex flex-col h-[225px]">
               <div className="w-full flex mb-4 items-center">
                 <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                   <img src="https://i.pravatar.cc/100?img=3" alt="" />
@@ -120,7 +131,7 @@ export const Testimonials = () => {
           </SwiperSlide>
 
           <SwiperSlide>
-            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 h-full lg:h-[225px] flex flex-col">
+            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 flex flex-col h-[225px]">
               <div className="w-full flex mb-4 items-center">
                 <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                   <img src="https://i.pravatar.cc/100?img=5" alt="" />
@@ -148,7 +159,7 @@ export const Testimonials = () => {
           </SwiperSlide>
 
           <SwiperSlide>
-            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 h-full lg:h-[225px] flex flex-col">
+            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 flex flex-col h-[225px]">
               <div className="w-full flex mb-4 items-center">
                 <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                   <img src="https://i.pravatar.cc/100?img=7" alt="" />
@@ -176,7 +187,7 @@ export const Testimonials = () => {
           </SwiperSlide>
 
           <SwiperSlide>
-            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 h-full lg:h-[225px] flex flex-col">
+            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 flex flex-col h-[225px]">
               <div className="w-full flex mb-4 items-center">
                 <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                   <img src="https://i.pravatar.cc/100?img=8" alt="" />
@@ -204,7 +215,7 @@ export const Testimonials = () => {
           </SwiperSlide>
 
           <SwiperSlide>
-            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 h-full lg:h-[225px] flex flex-col">
+            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 flex flex-col h-[225px]">
               <div className="w-full flex mb-4 items-center">
                 <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                   <img src="https://i.pravatar.cc/100?img=9" alt="" />
@@ -232,14 +243,14 @@ export const Testimonials = () => {
           </SwiperSlide>
 
           <SwiperSlide>
-            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 h-full lg:h-[225px] flex flex-col">
+            <div className="w-full mx-auto rounded-lg bg-white border border-gray-200 p-5 text-gray-800 font-light mb-6 flex flex-col h-[225px]">
               <div className="w-full flex mb-4 items-center">
                 <div className="overflow-hidden rounded-full w-10 h-10 bg-gray-50 border border-gray-200">
                   <img src="https://i.pravatar.cc/100?img=10" alt="" />
                 </div>
                 <div className="flex-grow pl-3">
                   <h6 className="font-bold text-base uppercase text-gray-600">
-                    Sophia Martinez
+                    Sofia Martinez
                   </h6>
                 </div>
               </div>
@@ -248,9 +259,9 @@ export const Testimonials = () => {
                   <span className="text-xl leading-none italic font-bold text-gray-400 mr-1">
                     "
                   </span>
-                  I was amazed by how seamless the process was with VisaEase.
-                  Their platform is user-friendly, and their team truly cares
-                  about their clients.
+                  My experience with VisaEase was top-notch. They provided clear
+                  guidance at every stage, making my visa application a breeze.
+                  Highly recommended!
                   <span className="text-xl leading-none italic font-bold text-gray-400 ml-1">
                     "
                   </span>

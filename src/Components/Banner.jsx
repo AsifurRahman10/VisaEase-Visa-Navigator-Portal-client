@@ -31,13 +31,13 @@ export const Banner = () => {
           <img className="min-h-screen lg:max-h-[800px] w-full" src={img1} />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent"></div>
           <div className="absolute inset-0 flex flex-col justify-center items-start text-white ml-12 lg:ml-32">
-            <div className="px-6 py-2 bg-primary animate__animated animate__slideInRight">
+            <div className="px-6 py-2 bg-primary ">
               <p className="font-bold">You trust is our motivation</p>
             </div>
-            <h2 className="text-2xl lg:text-6xl font-bold mt-4 playfair mb-2 lg:mb-4 lg:w-1/2 animate__animated animate__slideInRight">
+            <h2 className="text-2xl lg:text-6xl font-bold mt-4 playfair mb-2 lg:mb-4 lg:w-1/2 ">
               Your Gateway to Global Opportunities
             </h2>
-            <p className="text-lg font-semibold leto animate__animated animate__fadeInRightBig animate__delay-1s">
+            <p className="text-lg font-semibold leto">
               Explore Boundaries Without Barriers
             </p>
           </div>
@@ -46,13 +46,13 @@ export const Banner = () => {
           <img className="min-h-screen lg:max-h-[800px] w-full" src={img2} />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent"></div>
           <div className="absolute inset-0 flex flex-col justify-center items-start text-white ml-12 lg:ml-32">
-            <div className="px-6 py-2 bg-primary animate__animated animate__slideInRight">
+            <div className="px-6 py-2 bg-primary ">
               <p className="font-bold">You trust is our motivation</p>
             </div>
-            <h2 className="text-2xl lg:text-6xl font-bold playfair mb-4 lg:w-1/2 mt-4 animate__animated animate__slideInRight">
+            <h2 className="text-2xl lg:text-6xl font-bold playfair mb-4 lg:w-1/2 mt-4 ">
               Visas Made Easy, Journeys Made Memorable
             </h2>
-            <p className="text-lg font-semibold leto mr-4 lg:mr-4 animate__animated animate__fadeInRightBig animate__delay-1s">
+            <p className="text-lg font-semibold leto mr-4 lg:mr-4 ">
               From Application to Arrival—We've Got You Covered
             </p>
           </div>
@@ -61,13 +61,13 @@ export const Banner = () => {
           <img className="min-h-screen lg:max-h-[800px] w-full" src={img3} />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent"></div>
           <div className="absolute inset-0 flex flex-col justify-center items-start text-white ml-12 lg:ml-32">
-            <div className="px-6 py-2 bg-primary  animate__animated animate__slideInRight">
+            <div className="px-6 py-2 bg-primary  ">
               <p className="font-bold">You trust is our motivation</p>
             </div>
-            <h2 className="text-2xl lg:text-6xl font-bold playfair mb-4 lg:w-1/2 animate__animated animate__slideInRight mt-4">
+            <h2 className="text-2xl lg:text-6xl font-bold playfair mb-4 lg:w-1/2  mt-4">
               Seamless Visa Solutions for Every Destination
             </h2>
-            <p className="text-lg font-semibold leto mr-4 lg:mr-4 animate__animated animate__fadeInRightBig animate__delay-1s">
+            <p className="text-lg font-semibold leto mr-4 lg:mr-4 ">
               Bridging the Gap Between You and Your Destination
             </p>
           </div>

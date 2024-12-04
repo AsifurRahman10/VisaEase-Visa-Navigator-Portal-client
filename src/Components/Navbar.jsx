@@ -1,11 +1,14 @@
 import { Link, NavLink } from "react-router";
 import logo from "../../public/logo-2.png";
-import "animate.css";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 export const Navbar = () => {
   const { user, signOutUI } = useContext(AuthContext);
-  console.log(user);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  console.log(isDropdownOpen);
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
   const handleSignOut = () => {
     signOutUI();
   };
@@ -93,8 +96,6 @@ export const Navbar = () => {
                   />
                 </div>
               </div>
-
-              {/* tooltip */}
               <div className="invisible absolute translate-x-12 lg:translate-x-16 z-50 flex w-52 flex-col bg-primary py-1 px-4 text-gray-800 shadow-xl group-hover:visible right-0 rounded-lg items-center">
                 <p className="my-2 block border-gray-100 py-1 font-semibold text-white md:mx-2">
                   User name : {user.displayName}
@@ -126,7 +127,12 @@ export const Navbar = () => {
           </div>
         )}
         <div className="dropdown block lg:hidden">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn btn-ghost lg:hidden"
+            onClick={toggleDropdown}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-5 w-5"
@@ -142,28 +148,30 @@ export const Navbar = () => {
               />
             </svg>
           </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 right-6 z-[1] mt-3 w-52 p-2 shadow lato text-lg text-gray-600 font-medium gap-2"
-          >
-            {list}
-            {!user && (
-              <div className="flex justify-center flex-col items-center">
-                <Link to={"/login"} className="w-full">
-                  <button className="relative btn bg-primary text-white font-bold text-lg lato rounded-lg w-full lg:w-40 h-12 overflow-hidden group">
-                    <span className="absolute inset-0 bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-                    <span className="relative z-10">Login</span>
-                  </button>
-                </Link>
-                <Link to={"/register"} className="w-full">
-                  <button className="relative btn bg-primary text-white font-bold text-lg lato rounded-lg w-full lg:w-40 h-12 overflow-hidden group">
-                    <span className="absolute inset-0 bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-                    <span className="relative z-10">Register</span>
-                  </button>
-                </Link>
-              </div>
-            )}
-          </ul>
+          {isDropdownOpen && (
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content bg-base-100 right-6 z-50 mt-3 w-52 p-2 shadow lato text-lg text-gray-600 font-medium gap-2"
+            >
+              {list}
+              {!user && (
+                <div className="flex justify-center flex-col items-center">
+                  <Link to={"/login"} className="w-full">
+                    <button className="relative btn bg-primary text-white font-bold text-lg lato rounded-lg w-full lg:w-40 h-12 overflow-hidden group">
+                      <span className="absolute inset-0 bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+                      <span className="relative z-10">Login</span>
+                    </button>
+                  </Link>
+                  <Link to={"/register"} className="w-full">
+                    <button className="relative btn bg-primary text-white font-bold text-lg lato rounded-lg w-full lg:w-40 h-12 overflow-hidden group">
+                      <span className="absolute inset-0 bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+                      <span className="relative z-10">Register</span>
+                    </button>
+                  </Link>
+                </div>
+              )}
+            </ul>
+          )}
         </div>
       </div>
     </div>
