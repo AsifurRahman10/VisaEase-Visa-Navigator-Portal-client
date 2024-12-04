@@ -58,9 +58,23 @@ export const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar px-10 shadow-xl">
+    <div className="navbar px-2 md:px-10 shadow-xl">
       <div className="navbar-start">
-        <div className="dropdown">
+        <a className="text-xl playfair flex justify-center items-center gap-2">
+          <img className="w-20 md:w-24 ml-10 md:ml-0" src={logo} alt="" />
+          <p className="text-2xl md:text-4xl font-bold">
+            <span className="text-primary">Visa</span>
+            <span className="text-secondary">Ease</span>
+          </p>
+        </a>
+      </div>
+      <div className="navbar-center hidden  lg:flex">
+        <ul className="menu menu-horizontal px-1 lato text-lg text-gray-600 font-medium gap-6">
+          {list}
+        </ul>
+      </div>
+      <div className="navbar-end">
+        <div className="dropdown block lg:hidden">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -79,26 +93,18 @@ export const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow lato text-lg text-gray-600 font-medium gap-6"
+            className="menu menu-sm dropdown-content bg-base-100 right-6 z-[1] mt-3 w-52 p-2 shadow lato text-lg text-gray-600 font-medium gap-2"
           >
             {list}
+            <Link className="">
+              <button className="relative btn bg-primary text-white font-bold text-lg lato  w-full h-12 overflow-hidden group">
+                <span className="absolute inset-0 bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+                <span className="relative z-10">Login</span>
+              </button>
+            </Link>
           </ul>
         </div>
-        <a className="text-xl playfair flex justify-center items-center gap-2">
-          <img className="w-24" src={logo} alt="" />
-          <p className="text-4xl font-bold">
-            <span className="text-primary">Visa</span>
-            <span className="text-secondary">Ease</span>
-          </p>
-        </a>
-      </div>
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 lato text-lg text-gray-600 font-medium gap-6">
-          {list}
-        </ul>
-      </div>
-      <div className="navbar-end">
-        <Link>
+        <Link className="hidden lg:block">
           <button className="relative btn bg-primary text-white font-bold text-lg lato rounded-[50px] w-40 h-12 overflow-hidden group">
             <span className="absolute inset-0 bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
             <span className="relative z-10">Login</span>
