@@ -1,0 +1,95 @@
+import advice from "../assets/advice-blue.png";
+import user from "../assets/user-friendly.png";
+import approval from "../assets/approval.png";
+import plane from "../assets/plane.jpg";
+import passport from "../assets/passport.jpg";
+import happy from "../assets/happy.jpg";
+import avater1 from "../assets/a-1.jpg";
+import avater2 from "../assets/a-2.jpg";
+import avater3 from "../assets/a-3.jpg";
+import avater4 from "../assets/a-4.jpg";
+export const WhyUs = () => {
+  return (
+    <div className="flex justify-between items-center lg:w-9/12 mx-auto lato my-20">
+      <div className="flex-1">
+        <p className="text-xl font-semibold text-primary">Why choice us</p>
+        <h2 className="text-5xl font-extrabold mt-4">
+          Some reason why you trust VisaEase
+        </h2>
+        <p className="text-gray-600 text-lg mt-2">
+          VisaEase is your trusted partner for hassle-free visa solutions. With
+          expert guidance, reliable support, and a user-friendly process, we
+          make your journey seamless from start to finish.
+        </p>
+        <div className="flex gap-4 mt-8">
+          <img className="w-20 h-20" src={advice} alt="" />
+          <div>
+            <h3 className="text-3xl font-bold">Expert Guidance</h3>
+            <p className="text-xl text-gray-500 mt-4">
+              Our experienced professionals provide accurate and personalized
+              assistance for all your visa needs
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-4 mt-6">
+          <img className="w-20 h-20" src={user} alt="" />
+          <div>
+            <h3 className="text-3xl font-bold">Streamlined Process</h3>
+            <p className="text-xl text-gray-500 mt-4">
+              Enjoy a hassle-free experience with our user-friendly platform
+              designed for quick and easy applications
+            </p>
+          </div>
+        </div>
+        <div className="flex gap-4 mt-6">
+          <img className="w-20 h-20" src={approval} alt="" />
+          <div>
+            <h3 className="text-3xl font-bold">High Visa Approval Rate</h3>
+            <p className="text-xl text-gray-500 mt-4">
+              Proudly maintaining a proven track record of successful visa
+              applications
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="flex-1">
+        <div className="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="relative col-span-2">
+            <img
+              src={plane}
+              alt="Happy Customers"
+              className="rounded-lg object-cover w-full h-full"
+            />
+            <div className="absolute -bottom-10 left-4 bg-primary text-white px-4 py-2 rounded-lg shadow-lg">
+              <h2 className="text-lg font-bold">1M+ Trusted Customers</h2>
+              <div className="flex items-center mt-2">
+                <img
+                  src={avater1}
+                  className="w-8 h-8 rounded-full border-2 border-white"
+                />
+                <img
+                  src={avater2}
+                  className="w-8 h-8 rounded-full border-2 border-white -ml-2"
+                />
+                <img
+                  src={avater3}
+                  className="w-8 h-8 rounded-full border-2 border-white -ml-2"
+                />
+                <img
+                  src={avater4}
+                  className="w-8 h-8 rounded-full border-2 border-white -ml-2"
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Right Images */}
+          <div className="grid grid-cols-1 gap-4">
+            <img src={passport} className="rounded-lg  w-full h-full" />
+            <img src={happy} className="rounded-lg  w-full h-full" />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
