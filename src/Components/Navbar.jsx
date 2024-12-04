@@ -96,7 +96,7 @@ export const Navbar = () => {
             className="menu menu-sm dropdown-content bg-base-100 right-6 z-[1] mt-3 w-52 p-2 shadow lato text-lg text-gray-600 font-medium gap-2"
           >
             {list}
-            <Link className="">
+            <Link to={"/login"}>
               <button className="relative btn bg-primary text-white font-bold text-lg lato  w-full h-12 overflow-hidden group">
                 <span className="absolute inset-0 bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
                 <span className="relative z-10">Login</span>
@@ -104,7 +104,7 @@ export const Navbar = () => {
             </Link>
           </ul>
         </div>
-        <Link className="hidden lg:block">
+        <Link to={"/login"} className="hidden lg:block">
           <button className="relative btn bg-primary text-white font-bold text-lg lato rounded-[50px] w-40 h-12 overflow-hidden group">
             <span className="absolute inset-0 bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
             <span className="relative z-10">Login</span>
