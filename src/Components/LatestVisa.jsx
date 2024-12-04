@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Title } from "./Title";
 import { VisaCard } from "./VisaCard";
+import { Link } from "react-router";
 
 export const LatestVisa = () => {
   const [latestVisas, setLatestVisas] = useState([]);
@@ -21,10 +22,18 @@ export const LatestVisa = () => {
           }
         ></Title>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-20">
         {latestVisas.map((singleVisa) => (
           <VisaCard key={singleVisa._id} singleVisa={singleVisa}></VisaCard>
         ))}
+      </div>
+      <div className="mt-10 flex justify-center items-center">
+        <Link to={"/login"} className="">
+          <button className=" relative btn bg-primary text-white font-bold text-lg lato rounded-lg w-full lg:w-96 h-12 overflow-hidden group">
+            <span className="absolute inset-0 bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+            <span className="relative z-10">Login</span>
+          </button>
+        </Link>
       </div>
     </div>
   );
