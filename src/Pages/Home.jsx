@@ -1,3 +1,11 @@
+import { Banner } from "../Components/Banner";
+
 export const Home = () => {
-  return <div>Home</div>;
+  return (
+    <div>
+      <section>
+        <Banner></Banner>
+      </section>
+    </div>
+  );
 };
