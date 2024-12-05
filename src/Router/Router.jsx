@@ -17,6 +17,7 @@ export const router = createBrowserRouter([
       {
         path: "/allVisas",
         element: <AllVisa></AllVisa>,
+        loader: () => fetch("http://localhost:5000/allVisa"),
       },
       {
         path: "/login",
