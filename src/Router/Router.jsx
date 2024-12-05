@@ -4,6 +4,7 @@ import { Home } from "../Pages/Home";
 import { AllVisa } from "../Pages/AllVisa";
 import { Login } from "../Pages/Login";
 import { Register } from "../Pages/Register";
+import { AddVisa } from "../Pages/AddVisa";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,11 @@ export const router = createBrowserRouter([
       {
         path: "/allVisas",
         element: <AllVisa></AllVisa>,
+        loader: () => fetch("http://localhost:5000/allVisa"),
+      },
+      {
+        path: "/addVisa",
+        element: <AddVisa></AddVisa>,
         loader: () => fetch("http://localhost:5000/allVisa"),
       },
       {

@@ -33,7 +33,7 @@ export const Login = () => {
     });
   };
   return (
-    <section className="flex box-border justify-center items-center py-6">
+    <div className="flex box-border justify-center items-center py-6">
       <div className="rounded-2xl flex max-w-5xl p-5 items-center">
         <div className="md:w-1/2 px-8">
           <h2 className="font-bold text-3xl text-primary">Login</h2>
@@ -125,6 +125,6 @@ export const Login = () => {
           />
         </div>
       </div>
-    </section>
+    </div>
   );
 };
