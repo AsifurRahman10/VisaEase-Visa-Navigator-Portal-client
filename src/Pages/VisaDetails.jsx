@@ -23,8 +23,8 @@ export const VisaDetails = () => {
   } = visaDetail;
 
   return (
-    <div className="w-1/2 mx-auto lato my-20">
-      <div className="flex flex-row-reverse justify-between items-center gap-6">
+    <div className="w-11/12 lg:w-1/2 mx-auto lato my-10 lg:my-20">
+      <div className="flex flex-col-reverse lg:flex-row-reverse justify-between items-center gap-6">
         <div className="flex-1">
           <img
             className="h-full w-full object-cover rounded-lg"
@@ -53,7 +53,7 @@ export const VisaDetails = () => {
           The visa application involves submitting forms, documents, fees, and
           biometrics, with decisions made after processing.
         </p>
-        <div className="grid grid-cols-3 gap-6 mt-5 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-5 text-center">
           <div className="flex flex-col justify-center items-center bg-[#f5f5f7] p-6 rounded">
             <img className="w-[72px]" src={requirement} alt="" />
             <h3 className="text-xl font-bold mt-3">Ensure The Requrements</h3>
@@ -70,8 +70,8 @@ export const VisaDetails = () => {
               process.
             </p>
           </div>
-          <div className="flex flex-col justify-center items-center bg-[#f5f5f7] p-6 rounded">
-            <TfiWrite className="text-7xl text-primary" />
+          <div className="flex flex-col justify-center items-center bg-[#f5f5f7] p-6 rounded md:col-span-2 lg:col-span-1">
+            <TfiWrite className="text-6xl lg:text-7xl text-primary" />
             <h3 className="text-xl font-bold mt-3">
               Fill Up The Required From
             </h3>
@@ -83,7 +83,7 @@ export const VisaDetails = () => {
         </div>
       </div>
 
-      <div className="flex mt-10 gap-6 items-stretch">
+      <div className="flex flex-col md:flex-row mt-10 gap-6 items-stretch">
         <div className="flex-1">
           <img className="w-full h-full object-cover" src={document} alt="" />
         </div>
