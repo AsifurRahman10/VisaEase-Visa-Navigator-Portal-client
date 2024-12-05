@@ -17,7 +17,6 @@ export const Login = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, passport);
     emailLogin(email, password)
       .then((res) => {
         navigate("/");
@@ -28,9 +27,7 @@ export const Login = () => {
       });
   };
   const handleGoogleLogin = () => {
-    googleLogin().then((res) => {
-      // console.log(res.user);
-    });
+    googleLogin().then((res) => {});
   };
   return (
     <div className="flex box-border justify-center items-center py-6">

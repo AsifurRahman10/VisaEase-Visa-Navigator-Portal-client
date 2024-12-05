@@ -13,7 +13,6 @@ export const VisaCard = ({ singleVisa }) => {
     validity,
     application_method,
   } = singleVisa;
-  console.log(singleVisa);
   return (
     <div className="group bg-[#f5f5f7] shadow-lg rounded-lg p-6 hover:bg-primary hover:shadow-2xl space-y-4 hover:scale-105 transition-all duration-300 ease-in-out text-gray-800">
       <h2 className="text-2xl font-semibold mb-2 group-hover:text-white">

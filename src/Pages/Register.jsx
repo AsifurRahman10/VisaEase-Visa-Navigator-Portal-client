@@ -45,9 +45,7 @@ export const Register = () => {
       });
   };
   const handleGoogleLogin = () => {
-    googleLogin().then((res) => {
-      // console.log(res.user);
-    });
+    googleLogin().then((res) => {});
   };
   return (
     <section className="flex box-border justify-center items-center py-6">

@@ -5,6 +5,8 @@ import { AllVisa } from "../Pages/AllVisa";
 import { Login } from "../Pages/Login";
 import { Register } from "../Pages/Register";
 import { AddVisa } from "../Pages/AddVisa";
+import { PrivateRoute } from "./PrivateRoute";
+import Swal from "sweetalert2";
 
 export const router = createBrowserRouter([
   {
@@ -22,7 +24,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/addVisa",
-        element: <AddVisa></AddVisa>,
+        element: (
+          <PrivateRoute>
+            <AddVisa></AddVisa>
+          </PrivateRoute>
+        ),
         loader: () => fetch("http://localhost:5000/allVisa"),
       },
       {
