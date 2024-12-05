@@ -6,7 +6,7 @@ import { Login } from "../Pages/Login";
 import { Register } from "../Pages/Register";
 import { AddVisa } from "../Pages/AddVisa";
 import { PrivateRoute } from "./PrivateRoute";
-import Swal from "sweetalert2";
+import { VisaDetails } from "../Pages/VisaDetails";
 
 export const router = createBrowserRouter([
   {
@@ -38,6 +38,16 @@ export const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>,
+      },
+      {
+        path: "/visaDetails/:id",
+        element: (
+          <PrivateRoute>
+            <VisaDetails></VisaDetails>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allVisa/${params.id}`),
       },
     ],
   },

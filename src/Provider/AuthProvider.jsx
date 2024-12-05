@@ -36,7 +36,6 @@ const AuthProvider = ({ children }) => {
 
   // update email while register
   const updateProfileNamePhoto = (name, photo) => {
-    setLoading(true);
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,

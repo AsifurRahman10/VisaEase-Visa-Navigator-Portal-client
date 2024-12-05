@@ -1,7 +1,8 @@
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router";
 
 export const CardSmall = ({ singleVisa }) => {
-  const { country_name, country_image, visa_type, fee } = singleVisa;
+  const { _id, country_name, country_image, visa_type, fee } = singleVisa;
   return (
     <div className="relative group overflow-hidden rounded-lg shadow-lg transition-transform transform hover:scale-105">
       <img
@@ -17,9 +18,11 @@ export const CardSmall = ({ singleVisa }) => {
           {" "}
           <span className="font-semibold">Fee:</span> {fee}
         </p>
-        <button className="bg-primary text-white py-2 px-6 rounded-full hover:bg-primary-dark focus:outline-none focus:ring focus:ring-primary-light transition-colors duration-300 flex items-center">
-          See Details <FaArrowRight className="ml-2" />
-        </button>
+        <Link to={`/visaDetails/${_id}`}>
+          <button className="bg-primary text-white py-2 px-6 rounded-full hover:bg-primary-dark focus:outline-none focus:ring focus:ring-primary-light transition-colors duration-300 flex items-center">
+            See Details <FaArrowRight className="ml-2" />
+          </button>
+        </Link>
       </div>
     </div>
   );

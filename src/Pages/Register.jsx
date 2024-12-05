@@ -7,13 +7,8 @@ export const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const {
-    user,
-    googleLogin,
-    emailRegistration,
-    updateProfileNamePhoto,
-    setUser,
-  } = useContext(AuthContext);
+  const { googleLogin, emailRegistration, updateProfileNamePhoto, setUser } =
+    useContext(AuthContext);
   const handleShowPass = () => {
     setShowPassword(!showPassword);
   };
