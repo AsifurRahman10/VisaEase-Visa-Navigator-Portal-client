@@ -2,8 +2,14 @@ import { IoMdTime } from "react-icons/io";
 import { LuCircleDollarSign } from "react-icons/lu";
 import { GrUpdate } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
+import { useEffect, useRef, useState } from "react";
+import { Modal } from "./Modal";
 export const MyVisaCard = ({ myVisa }) => {
+  const [visaDetails, setVisaDetails] = useState({});
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef();
   const {
+    _id,
     country_name,
     country_image,
     visa_type,
@@ -12,7 +18,21 @@ export const MyVisaCard = ({ myVisa }) => {
     validity,
     application_method,
   } = myVisa;
-  console.log(myVisa);
+  useEffect(() => {
+    if (isModalOpen) {
+      modalRef.current?.showModal();
+    } else {
+      modalRef.current?.close();
+    }
+  }, [isModalOpen, visaDetails]);
+  const handleModalData = (_id) => {
+    fetch(`http://localhost:5000/allVisa/${_id}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setVisaDetails(data);
+        setIsModalOpen(true);
+      });
+  };
   return (
     <div className="flex items-center gap-6 border rounded-lg p-6 shadow-lg bg-white">
       {/* Image Section */}
@@ -60,13 +80,21 @@ export const MyVisaCard = ({ myVisa }) => {
 
       {/* Action Buttons Section */}
       <div className="flex flex-col items-center gap-4">
-        <button className="relative bg-primary text-white text-md font-medium py-2 px-6 rounded-md hover:bg-blue-700 transition-all flex items-center gap-2 shadow-md">
+        <button
+          onClick={() => handleModalData(_id)}
+          className="relative bg-primary text-white text-md font-medium py-2 px-6 rounded-md hover:bg-blue-700 transition-all flex items-center gap-2 shadow-md"
+        >
           <GrUpdate className="text-xl" /> Update
         </button>
         <button className="relative bg-red-600 text-white text-md font-medium py-2 px-6 rounded-md hover:bg-red-700 transition-all flex items-center gap-2 shadow-md">
           <MdDelete className="text-2xl" /> Delete
         </button>
       </div>
+      <Modal
+        modalRef={modalRef}
+        isModalOpen={isModalOpen}
+        visaDetails={visaDetails}
+      ></Modal>
     </div>
   );
 };

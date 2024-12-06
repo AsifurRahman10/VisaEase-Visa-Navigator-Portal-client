@@ -8,7 +8,6 @@ import { IoIosCheckboxOutline } from "react-icons/io";
 export const VisaDetails = () => {
   const visaDetail = useLoaderData();
   const {
-    _id,
     country_name,
     country_image,
     visa_type,
@@ -18,7 +17,6 @@ export const VisaDetails = () => {
     application_method,
     description,
     age_restriction,
-    user_email,
     required_documents,
   } = visaDetail;
 
