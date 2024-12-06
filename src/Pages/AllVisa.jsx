@@ -4,6 +4,7 @@ import { Title } from "../Components/Title";
 
 export const AllVisa = () => {
   const data = useLoaderData();
+  console.log(data);
   return (
     <div className="w-11/12 md:w-9/12 mx-auto my-10 md:my-20">
       <div className="mb-10 md:mb-20">

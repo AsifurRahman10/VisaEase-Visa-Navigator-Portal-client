@@ -4,7 +4,8 @@ import { GrUpdate } from "react-icons/gr";
 import { MdDelete } from "react-icons/md";
 import { useEffect, useRef, useState } from "react";
 import { Modal } from "./Modal";
-export const MyVisaCard = ({ myVisa }) => {
+import Swal from "sweetalert2";
+export const MyVisaCard = ({ myVisa, setUserAddedVisas }) => {
   const [visaDetails, setVisaDetails] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false);
   const modalRef = useRef();
@@ -33,12 +34,60 @@ export const MyVisaCard = ({ myVisa }) => {
         setIsModalOpen(true);
       });
   };
+
+  const handleDelete = (_id) => {
+    const swalWithBootstrapButtons = Swal.mixin({
+      customClass: {
+        confirmButton:
+          "bg-red-500 text-white px-4 py-2 rounded hover:bg-secondary",
+        cancelButton:
+          "bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600",
+      },
+      buttonsStyling: false,
+    });
+
+    swalWithBootstrapButtons
+      .fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel!",
+        reverseButtons: true,
+      })
+      .then((result) => {
+        if (result.isConfirmed) {
+          // Call the delete API
+          fetch(`http://localhost:5000/allVisa/${_id}`, {
+            method: "DELETE",
+          })
+            .then((res) => res.json())
+            .then((data) => {
+              if (data.deletedCount) {
+                swalWithBootstrapButtons.fire({
+                  title: "Deleted!",
+                  text: "The item has been deleted.",
+                  icon: "success",
+                });
+              }
+            });
+        } else if (result.dismiss === Swal.DismissReason.cancel) {
+          swalWithBootstrapButtons.fire({
+            title: "Cancelled",
+            text: "Your imaginary file is safe :)",
+            icon: "error",
+          });
+        }
+      });
+  };
+
   return (
-    <div className="flex items-center gap-6 border rounded-lg p-6 shadow-lg bg-white">
+    <div className="flex flex-col lg:flex-row items-center gap-6 border rounded-lg p-6 shadow-lg bg-white">
       {/* Image Section */}
       <div className="flex-shrink-0">
         <img
-          className="w-48 h-32 object-cover rounded-md border"
+          className="w-full lg:w-48 lg:h-32 object-cover rounded-md border"
           src={country_image}
           alt={country_name}
         />
@@ -79,14 +128,17 @@ export const MyVisaCard = ({ myVisa }) => {
       </div>
 
       {/* Action Buttons Section */}
-      <div className="flex flex-col items-center gap-4">
+      <div className="flex flex-row lg:flex-col md:items-center gap-4">
         <button
           onClick={() => handleModalData(_id)}
           className="relative bg-primary text-white text-md font-medium py-2 px-6 rounded-md hover:bg-blue-700 transition-all flex items-center gap-2 shadow-md"
         >
           <GrUpdate className="text-xl" /> Update
         </button>
-        <button className="relative bg-red-600 text-white text-md font-medium py-2 px-6 rounded-md hover:bg-red-700 transition-all flex items-center gap-2 shadow-md">
+        <button
+          onClick={() => handleDelete(_id)}
+          className="relative bg-red-600 text-white text-md font-medium py-2 px-6 rounded-md hover:bg-red-700 transition-all flex items-center gap-2 shadow-md"
+        >
           <MdDelete className="text-2xl" /> Delete
         </button>
       </div>
@@ -94,6 +146,9 @@ export const MyVisaCard = ({ myVisa }) => {
         modalRef={modalRef}
         isModalOpen={isModalOpen}
         visaDetails={visaDetails}
+        setVisaDetails={setVisaDetails}
+        setUserAddedVisas={setUserAddedVisas}
+        setIsModalOpen={setIsModalOpen}
       ></Modal>
     </div>
   );

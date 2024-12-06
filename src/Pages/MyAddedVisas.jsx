@@ -12,13 +12,17 @@ export const MyAddedVisas = () => {
       .then((data) => {
         setUserAddedVisas(data);
       });
-  }, [user.email]);
+  }, [user.email, userAddedVisas]);
   return (
-    <div className="w-9/12 mx-auto my-20 lato">
+    <div className="w-11/12 md:w-9/12 mx-auto py-10 lg:my-20 lato">
       <Title title={"My Added Visas"}></Title>
       <div className="space-y-6 mt-10">
         {userAddedVisas.map((myVisa, index) => (
-          <MyVisaCard myVisa={myVisa} key={index}></MyVisaCard>
+          <MyVisaCard
+            setUserAddedVisas={setUserAddedVisas}
+            myVisa={myVisa}
+            key={index}
+          ></MyVisaCard>
         ))}
       </div>
     </div>
