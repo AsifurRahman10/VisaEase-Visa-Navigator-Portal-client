@@ -7,6 +7,7 @@ import { Register } from "../Pages/Register";
 import { AddVisa } from "../Pages/AddVisa";
 import { PrivateRoute } from "./PrivateRoute";
 import { VisaDetails } from "../Pages/VisaDetails";
+import { MyAddedVisas } from "../Pages/MyAddedVisas";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,14 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => fetch("http://localhost:5000/allVisa"),
+      },
+      {
+        path: "/myAddedVisa",
+        element: (
+          <PrivateRoute>
+            <MyAddedVisas></MyAddedVisas>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
