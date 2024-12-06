@@ -4,10 +4,24 @@ import requirement from "../assets/requirement.png";
 import { IoDocumentsOutline } from "react-icons/io5";
 import { TfiWrite } from "react-icons/tfi";
 import { IoIosCheckboxOutline } from "react-icons/io";
+import { useContext, useEffect, useRef, useState } from "react";
+import { VisaApplyModal } from "../Components/VisaApplyModal";
+import { AuthContext } from "../Provider/AuthProvider";
 
 export const VisaDetails = () => {
   const visaDetail = useLoaderData();
+  const { user } = useContext(AuthContext);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const modalRef = useRef();
+  useEffect(() => {
+    if (isModalOpen) {
+      modalRef.current?.showModal();
+    } else {
+      modalRef.current?.close();
+    }
+  }, [isModalOpen]);
   const {
+    _id,
     country_name,
     country_image,
     visa_type,
@@ -19,6 +33,12 @@ export const VisaDetails = () => {
     age_restriction,
     required_documents,
   } = visaDetail;
+  const handleModalData = (_id) => {
+    setIsModalOpen(true);
+  };
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className="w-11/12 lg:w-1/2 mx-auto lato my-10 lg:my-20">
@@ -144,23 +164,21 @@ export const VisaDetails = () => {
           </table>
         </div>
       </div>
-
-      {/* <p className="text-2xl font-semibold mt-4">Visa Type : {visa_type}</p>
-      <p className="text-2xl font-semibold mt-4">
-        Processing time : {processing_time}
-      </p>
-      <p className="text-2xl font-semibold mt-4">Visa Fee : {fee} $</p>
-      <p className="text-2xl font-semibold mt-4">Visa Validity : {validity}</p>
-      <p className="text-2xl font-semibold mt-4">
-        Application Method: {application_method}
-      </p>
-      <p className="text-2xl font-semibold mt-4">
-        Minimum age restriction : {age_restriction}
-      </p> */}
-      <button className="relative btn bg-primary text-white font-bold text-lg lato rounded-lg w-full lg:w-40 h-12 overflow-hidden group mt-8">
+      <button
+        onClick={() => handleModalData(_id)}
+        className="relative btn bg-primary text-white font-bold text-lg lato rounded-lg px-8 h-12 overflow-hidden group mt-8"
+      >
         <span className="absolute inset-0 bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
-        <span className="relative z-10">Apply</span>
+        <span className="relative z-10">Apply for the visa</span>
       </button>
+      <VisaApplyModal
+        isModalOpen={isModalOpen}
+        modalRef={modalRef}
+        user={user}
+        fee={fee}
+        handleCloseModal={handleCloseModal}
+        visaDetail={visaDetail}
+      ></VisaApplyModal>
     </div>
   );
 };
