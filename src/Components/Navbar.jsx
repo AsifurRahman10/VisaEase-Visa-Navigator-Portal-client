@@ -69,16 +69,18 @@ export const Navbar = () => {
   return (
     <div className="navbar px-2 md:px-10 shadow-xl dark:bg-[#121212]">
       <div className="navbar-start">
-        <a
-          className="text-xl playfair flex justify-center items-center gap-2"
-          data-aos="fade-up"
-        >
-          <img className="w-20 md:w-24 ml-10 md:ml-0" src={logo} alt="" />
-          <p className="text-2xl md:text-4xl font-bold">
-            <span className="text-primary">Visa</span>
-            <span className="text-secondary">Ease</span>
-          </p>
-        </a>
+        <Link to={"/"}>
+          <span
+            className="text-xl playfair flex justify-center items-center gap-2"
+            data-aos="fade-up"
+          >
+            <img className="w-20 md:w-24 ml-10 md:ml-0" src={logo} alt="" />
+            <p className="text-2xl md:text-4xl font-bold">
+              <span className="text-primary">Visa</span>
+              <span className="text-secondary">Ease</span>
+            </p>
+          </span>
+        </Link>
       </div>
       <div className="navbar-center hidden  lg:flex">
         <ul className="menu menu-horizontal px-1 lato text-lg text-gray-600 font-medium gap-6">

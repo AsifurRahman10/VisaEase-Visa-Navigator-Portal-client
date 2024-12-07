@@ -4,6 +4,7 @@ import { Link } from "react-router";
 
 export const VisaCard = ({ singleVisa }) => {
   const {
+    _id,
     country_name,
     country_image,
     visa_type,
@@ -41,9 +42,11 @@ export const VisaCard = ({ singleVisa }) => {
           Fee: <span className="font-normal">{fee}</span>
         </p>
       </div>
-      <button className="btn bg-secondary text-white w-full py-2 rounded hover:bg-transparent hover:underline hover:underline-offset-4  focus:outline-none focus:ring focus:ring-secondary-dark transition-colors duration-300">
-        See Details <FaArrowRight />
-      </button>
+      <Link to={`/visaDetails/${_id}`}>
+        <button className="btn bg-secondary text-white w-full py-2 rounded hover:bg-transparent hover:underline hover:underline-offset-4  focus:outline-none focus:ring focus:ring-secondary-dark transition-colors duration-300">
+          See Details <FaArrowRight />
+        </button>
+      </Link>
     </div>
   );
 };

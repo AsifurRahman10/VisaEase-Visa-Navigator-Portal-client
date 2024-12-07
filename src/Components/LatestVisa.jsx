@@ -30,7 +30,7 @@ export const LatestVisa = () => {
           ))}
         </div>
         <div className="mt-10 flex justify-center items-center">
-          <Link to={"/login"} className="">
+          <Link to={"/allVisas"} className="">
             <button className=" relative btn bg-primary text-white font-bold text-lg lato rounded-lg w-full md:w-96 h-12 overflow-hidden group">
               <span className="absolute inset-0 bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
               <span className="relative z-10">See all visas</span>

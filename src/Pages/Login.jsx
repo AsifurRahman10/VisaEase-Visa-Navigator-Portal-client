@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import passport from "../assets/passport.jpg";
 import { useContext, useState } from "react";
 import { FaEye, FaRegEyeSlash } from "react-icons/fa";
@@ -6,7 +6,8 @@ import { AuthContext } from "../Provider/AuthProvider";
 export const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
-  const { user, googleLogin, emailLogin } = useContext(AuthContext);
+  const location = useLocation();
+  const { setLoading, googleLogin, emailLogin } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleShowPass = () => {
     setShowPassword(!showPassword);
@@ -19,15 +20,27 @@ export const Login = () => {
     const password = form.password.value;
     emailLogin(email, password)
       .then((res) => {
-        navigate("/");
+        // setLoading(false);
+        if (location.state) {
+          return navigate(location.state.from);
+        } else {
+          navigate("/");
+        }
       })
       .catch((err) => {
+        setLoading(false);
         const message = err.message.split(":");
         setError(message[1]);
       });
   };
   const handleGoogleLogin = () => {
-    googleLogin().then((res) => {});
+    googleLogin().then((res) => {
+      if (location.state) {
+        return navigate(location.state.from);
+      } else {
+        navigate("/");
+      }
+    });
   };
   return (
     <div className="flex box-border justify-center items-center py-6">
@@ -44,6 +57,7 @@ export const Login = () => {
               type="email"
               name="email"
               placeholder="Email"
+              required
             />
             <div className="relative">
               <input
@@ -51,6 +65,7 @@ export const Login = () => {
                 type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="Password"
+                required
               />
               <button
                 type="button"
@@ -61,7 +76,10 @@ export const Login = () => {
               </button>
             </div>
             {error && <p className="text-red-500">{error}</p>}
-            <button className="relative btn bg-primary text-white font-bold text-lg lato rounded-xl w-full overflow-hidden group">
+            <button
+              type="submit"
+              className="relative btn bg-primary text-white font-bold text-lg lato rounded-xl w-full overflow-hidden group"
+            >
               <span className="absolute inset-0 bg-secondary transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
               <span className="relative z-10">Login</span>
             </button>
