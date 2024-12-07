@@ -55,7 +55,7 @@ export const Navbar = () => {
         <li>My added visas</li>
       </NavLink>
       <NavLink
-        to={"/myVisaApplication"}
+        to={"/myAppliedVisa"}
         className={({ isActive }) =>
           isActive
             ? "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300"
