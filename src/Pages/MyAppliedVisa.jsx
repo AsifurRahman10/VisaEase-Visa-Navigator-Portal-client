@@ -2,6 +2,7 @@ import { Title } from "../Components/Title";
 import { useContext, useEffect, useState } from "react";
 
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 export const MyAppliedVisa = () => {
   const { user } = useContext(AuthContext);
@@ -14,6 +15,23 @@ export const MyAppliedVisa = () => {
         setMyAppliedVisas(data);
       });
   }, []);
+  const handleCancel = (_id) => {
+    console.log(_id);
+    fetch(`http://localhost:5000/cancelVisa/${_id}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.deletedCount > 0) {
+          Swal.fire("Application has been canceled");
+          const newData = myAppliedVisas.filter((item) => item._id !== _id);
+          setMyAppliedVisas(newData);
+        }
+      });
+  };
   return (
     <div className="py-20">
       <Title title={"My visa application"}></Title>
@@ -70,7 +88,10 @@ export const MyAppliedVisa = () => {
                   <td>{userAppliedInfo.fullName}</td>
 
                   <th>
-                    <button className="btn bg-red-500 text-white  btn-sm">
+                    <button
+                      onClick={() => handleCancel(userAppliedInfo._id)}
+                      className="btn bg-red-500 text-white  btn-sm"
+                    >
                       Cancel
                     </button>
                   </th>
