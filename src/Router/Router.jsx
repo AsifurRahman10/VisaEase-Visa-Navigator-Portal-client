@@ -8,8 +8,8 @@ import { AddVisa } from "../Pages/AddVisa";
 import { PrivateRoute } from "./PrivateRoute";
 import { VisaDetails } from "../Pages/VisaDetails";
 import { MyAddedVisas } from "../Pages/MyAddedVisas";
-import { MyAppliedVisa } from "../Pages/MyAppliedVisa";
 import { Error } from "../Pages/Error";
+import { MyAppliedVisa } from "../Pages/MyAppliedVisa";
 
 export const router = createBrowserRouter([
   {
