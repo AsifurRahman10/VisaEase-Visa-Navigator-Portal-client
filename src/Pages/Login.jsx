@@ -3,6 +3,7 @@ import passport from "../assets/passport.jpg";
 import { useContext, useState } from "react";
 import { FaEye, FaRegEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 export const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
@@ -20,7 +21,6 @@ export const Login = () => {
     const password = form.password.value;
     emailLogin(email, password)
       .then((res) => {
-        // setLoading(false);
         if (location.state) {
           return navigate(location.state.from);
         } else {
@@ -44,6 +44,11 @@ export const Login = () => {
   };
   return (
     <div className="flex box-border justify-center items-center py-6">
+      <HelmetProvider>
+        <Helmet>
+          <title>Login - VisaEase</title>
+        </Helmet>
+      </HelmetProvider>
       <div className="rounded-2xl flex max-w-5xl p-5 items-center">
         <div className="md:w-1/2 px-8">
           <h2 className="font-bold text-3xl text-primary">Login</h2>

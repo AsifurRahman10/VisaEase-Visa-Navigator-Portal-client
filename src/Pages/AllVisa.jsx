@@ -3,18 +3,33 @@ import { CardSmall } from "../Components/CardSmall";
 import { Title } from "../Components/Title";
 import { useState } from "react";
 import { FaFilter } from "react-icons/fa";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export const AllVisa = () => {
   const data = useLoaderData();
   const [allVisa, setAllVisa] = useState(data);
-  const handleFilter = () => {
-    const filteredData = allVisa.filter((visa) =>
-      visa.visa_type.includes("Student visa")
+  const handleFilter = (visaType) => {
+    const filteredData = data.filter((visa) =>
+      visa.visa_type.includes(visaType)
     );
     setAllVisa(filteredData);
   };
+  const handleFilterByStudent = () => {
+    handleFilter("Student visa");
+  };
+  const handleFilterByTourist = () => {
+    handleFilter("Tourist visa");
+  };
+  const handleFilterByOfficial = () => {
+    handleFilter("Official visa");
+  };
   return (
     <div className="w-11/12 md:w-9/12 mx-auto my-10 md:my-20 lato">
+      <HelmetProvider>
+        <Helmet>
+          <title>All Visa - VisaEase</title>
+        </Helmet>
+      </HelmetProvider>
       <div className="mb-10 md:mb-20">
         <Title
           title={"Explore Visa Options"}
@@ -29,17 +44,25 @@ export const AllVisa = () => {
               role="button"
               className="btn m-1 bg-primary text-white px-10 text-lg rounded-none"
             >
-              Filter By
+              Filter By <FaFilter />
             </div>
             <ul
               tabIndex={0}
               className="dropdown-content menu bg-[#f5f5f7] z-[1] w-full p-2 shadow text-black rounded-none"
             >
-              <button onClick={handleFilter}>
+              <button onClick={handleFilterByStudent}>
                 <li>
-                  <a>
-                    <FaFilter /> Student Visa
-                  </a>
+                  <a> Student Visa</a>
+                </li>
+              </button>
+              <button onClick={handleFilterByTourist}>
+                <li>
+                  <a>Tourist visa</a>
+                </li>
+              </button>
+              <button onClick={handleFilterByOfficial}>
+                <li>
+                  <a>Official visa</a>
                 </li>
               </button>
             </ul>

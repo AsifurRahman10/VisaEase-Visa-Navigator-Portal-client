@@ -7,6 +7,7 @@ import { IoIosCheckboxOutline } from "react-icons/io";
 import { useContext, useEffect, useRef, useState } from "react";
 import { VisaApplyModal } from "../Components/VisaApplyModal";
 import { AuthContext } from "../Provider/AuthProvider";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export const VisaDetails = () => {
   const visaDetail = useLoaderData();
@@ -42,6 +43,11 @@ export const VisaDetails = () => {
 
   return (
     <div className="w-11/12 lg:w-1/2 mx-auto lato my-10 lg:my-20">
+      <HelmetProvider>
+        <Helmet>
+          <title>Visa Details - VisaEase</title>
+        </Helmet>
+      </HelmetProvider>
       <div className="flex flex-col-reverse lg:flex-row-reverse justify-between items-center gap-6">
         <div className="flex-1">
           <img
@@ -157,7 +163,7 @@ export const VisaDetails = () => {
                   {application_method}
                 </td>
                 <td className="border border-gray-300 text-lg text-gray-500">
-                  {age_restriction} +{" "}
+                  {age_restriction ? age_restriction : "N/A"}
                 </td>
               </tr>
             </tbody>

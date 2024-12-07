@@ -67,7 +67,7 @@ export const MyVisaCard = ({ myVisa, setUserAddedVisas }) => {
               if (data.deletedCount) {
                 swalWithBootstrapButtons.fire({
                   title: "Deleted!",
-                  text: "The item has been deleted.",
+                  text: "The visa has been deleted.",
                   icon: "success",
                 });
               }
@@ -75,7 +75,7 @@ export const MyVisaCard = ({ myVisa, setUserAddedVisas }) => {
         } else if (result.dismiss === Swal.DismissReason.cancel) {
           swalWithBootstrapButtons.fire({
             title: "Cancelled",
-            text: "Your imaginary file is safe :)",
+            text: "Your visa is still displayed",
             icon: "error",
           });
         }

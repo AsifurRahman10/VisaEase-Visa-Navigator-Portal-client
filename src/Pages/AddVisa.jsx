@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export const AddVisa = () => {
   const { user } = useContext(AuthContext);
@@ -70,11 +71,17 @@ export const AddVisa = () => {
             icon: "success",
           });
           form.reset();
+          setVisaType("");
         }
       });
   };
   return (
     <div className="py-10 lg:py-14">
+      <HelmetProvider>
+        <Helmet>
+          <title>Add visa - VisaEase</title>
+        </Helmet>
+      </HelmetProvider>
       <div className="flex box-border justify-center items-center">
         <div className="rounded-2xl flex w-11/12 md:max-w-5xl md:p-5 items-center">
           <div className="mx-auto px-8">
@@ -122,7 +129,6 @@ export const AddVisa = () => {
                     required
                     value={visaType}
                     onChange={handleChange}
-                    // defaultValue=""
                     className="select-bordered mt-1 h-10 w-full rounded border bg-gray-50 px-4 appearance-none"
                   >
                     <option value="" disabled>
@@ -208,9 +214,10 @@ export const AddVisa = () => {
 
               <div className="flex flex-col md:flex-row justify-center items-center gap-2">
                 <div className="flex-1">
-                  <label className="font-medium">Age_restriction</label>
+                  <label className="font-medium">
+                    Age_restriction (keep blank for N/A)
+                  </label>
                   <input
-                    required
                     type="number"
                     name="ageLimit"
                     className="h-10 border mt-1 rounded px-4 w-full bg-gray-50"

@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 export const MyAppliedVisa = () => {
   const { user } = useContext(AuthContext);
@@ -42,6 +43,11 @@ export const MyAppliedVisa = () => {
   };
   return (
     <div className="py-10 lg:min-h-[calc(100vh-404px)]">
+      <HelmetProvider>
+        <Helmet>
+          <title>My applied visa - VisaEase</title>
+        </Helmet>
+      </HelmetProvider>
       <div className="flex w-11/12 md:w-9/12 mx-auto mt-10 justify-between items-center">
         <div>
           <Title title={"My visa application"}></Title>
@@ -51,7 +57,7 @@ export const MyAppliedVisa = () => {
             <input
               type="text"
               className="grow"
-              placeholder="Search"
+              placeholder="Search by country name"
               onChange={handleSearch}
             />
             <svg
@@ -109,7 +115,7 @@ export const MyAppliedVisa = () => {
                     </div>
                   </td>
                   <td>
-                    <span className="badge border-none md:badge-ghost md:badge-sm">
+                    <span className="badge border-none lg:badge-ghost lg:badge-sm lg:whitespace-nowrap">
                       {userAppliedInfo.visa_type}
                     </span>
                   </td>

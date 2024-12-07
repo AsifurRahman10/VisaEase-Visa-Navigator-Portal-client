@@ -40,7 +40,7 @@ export const Testimonials = () => {
           className="mySwiper"
           loop={true}
           autoplay={{
-            delay: 5000,
+            delay: 6000,
             disableOnInteraction: false,
           }}
           breakpoints={{
@@ -72,9 +72,15 @@ export const Testimonials = () => {
                   <span className="text-xl leading-none italic font-bold text-gray-400 mr-1">
                     "
                   </span>
-                  VisaEase made my visa application process so easy and
-                  stress-free. Their expert team guided me every step of the way
-                  and ensured everything was perfect!
+                  <Typewriter
+                    typeSpeed={10}
+                    cursor={true}
+                    cursorBlinking={true}
+                    words={[
+                      "VisaEase made my visa application process so easy and stress free. Their expert team guided me every step of the way and ensured everything was perfect",
+                    ]}
+                  ></Typewriter>
+
                   <span className="text-xl leading-none italic font-bold text-gray-400 ml-1">
                     "
                   </span>
@@ -100,9 +106,15 @@ export const Testimonials = () => {
                   <span className="text-xl leading-none italic font-bold text-gray-400 mr-1">
                     "
                   </span>
-                  I couldn't be happier with VisaEase's service. From start to
-                  finish, they provided clear communication and support, leading
-                  to a successful visa approval!
+                  <Typewriter
+                    typeSpeed={10}
+                    cursor={true}
+                    cursorBlinking={true}
+                    words={[
+                      "I couldn't be happier with VisaEase's service. From start to finish, they provided clear communication and support, leading to a successful visa approval!",
+                    ]}
+                  ></Typewriter>
+
                   <span className="text-xl leading-none italic font-bold text-gray-400 ml-1">
                     "
                   </span>
@@ -128,9 +140,14 @@ export const Testimonials = () => {
                   <span className="text-xl leading-none italic font-bold text-gray-400 mr-1">
                     "
                   </span>
-                  VisaEase made my application process smooth and stress-free.
-                  Their team was always available to answer my questions. Thanks
-                  again.
+                  <Typewriter
+                    typeSpeed={10}
+                    cursor={true}
+                    cursorBlinking={true}
+                    words={[
+                      "VisaEase made my application process smooth and stress-free. Their team was always available to answer my questions. Thanks again.",
+                    ]}
+                  ></Typewriter>
                   <span className="text-xl leading-none italic font-bold text-gray-400 ml-1">
                     "
                   </span>
@@ -156,9 +173,15 @@ export const Testimonials = () => {
                   <span className="text-xl leading-none italic font-bold text-gray-400 mr-1">
                     "
                   </span>
-                  Exceptional service and guidance throughout the visa process!
-                  VisaEase truly cares about their clients, and it shows in
-                  every interaction. I would love to use it again.
+                  <Typewriter
+                    typeSpeed={10}
+                    cursor={true}
+                    cursorBlinking={true}
+                    words={[
+                      "Exceptional service and guidance throughout the visa process! VisaEase truly cares about their clients, and it shows in every interaction. I would love to use it again.",
+                    ]}
+                  ></Typewriter>
+
                   <span className="text-xl leading-none italic font-bold text-gray-400 ml-1">
                     "
                   </span>
@@ -184,9 +207,14 @@ export const Testimonials = () => {
                   <span className="text-xl leading-none italic font-bold text-gray-400 mr-1">
                     "
                   </span>
-                  I highly recommend VisaEase! Their expertise and attention to
-                  detail ensured my application was approved on time. Fantastic
-                  experience!
+                  <Typewriter
+                    typeSpeed={10}
+                    cursor={true}
+                    cursorBlinking={true}
+                    words={[
+                      "I highly recommend VisaEase! Their expertise and attention to detail ensured my application was approved on time. Fantastic experience!",
+                    ]}
+                  ></Typewriter>
                   <span className="text-xl leading-none italic font-bold text-gray-400 ml-1">
                     "
                   </span>
@@ -240,9 +268,14 @@ export const Testimonials = () => {
                   <span className="text-xl leading-none italic font-bold text-gray-400 mr-1">
                     "
                   </span>
-                  VisaEase turned what seemed like a complicated process into
-                  something simple and straightforward. Their dedication is
-                  unmatched.
+                  <Typewriter
+                    typeSpeed={10}
+                    cursor={true}
+                    cursorBlinking={true}
+                    words={[
+                      "VisaEase turned what seemed like a complicated process into something simple and straightforward. Their dedication is unmatched.",
+                    ]}
+                  ></Typewriter>
                   <span className="text-xl leading-none italic font-bold text-gray-400 ml-1">
                     "
                   </span>
@@ -268,9 +301,14 @@ export const Testimonials = () => {
                   <span className="text-xl leading-none italic font-bold text-gray-400 mr-1">
                     "
                   </span>
-                  My experience with VisaEase was top-notch. They provided clear
-                  guidance at every stage, making my visa application a breeze.
-                  Highly recommended!
+                  <Typewriter
+                    typeSpeed={10}
+                    cursor={true}
+                    cursorBlinking={true}
+                    words={[
+                      "My experience with VisaEase was top-notch. They provided clear guidance at every stage, making my visa application a breeze. Highly recommended!",
+                    ]}
+                  ></Typewriter>
                   <span className="text-xl leading-none italic font-bold text-gray-400 ml-1">
                     "
                   </span>

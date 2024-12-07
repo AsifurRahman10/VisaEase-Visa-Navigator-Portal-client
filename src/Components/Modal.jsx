@@ -266,9 +266,8 @@ export const Modal = ({
 
                   <div className="flex flex-col md:flex-row justify-center items-center gap-2">
                     <div className="flex-1">
-                      <label className="font-medium">Age_restriction</label>
+                      <label className="font-medium">Age restriction</label>
                       <input
-                        required
                         defaultValue={age_restriction}
                         type="number"
                         name="ageLimit"
