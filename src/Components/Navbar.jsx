@@ -89,7 +89,7 @@ export const Navbar = () => {
       </div>
       <div className="navbar-end">
         {/* dark mode toggle btn */}
-        <div className="form-control mr-6">
+        <div className="form-control mr-6 hidden md:block">
           <label className="label cursor-pointer">
             <span className="label-text mr-4 text-lg font-semibold dark:text-white">
               {darkMode ? "Light mode" : "Dark Mode"}
@@ -144,12 +144,12 @@ export const Navbar = () => {
             </Link>
           </div>
         )}
-        <div className="dropdown block lg:hidden">
+        <div className="dropdown">
           <div
             tabIndex={0}
             role="button"
             className="btn btn-ghost lg:hidden"
-            onClick={handleMode}
+            onClick={() => setIsDropdownOpen(!isDropdownOpen)}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -169,9 +169,22 @@ export const Navbar = () => {
           {isDropdownOpen && (
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 right-6 z-50 mt-3 w-52 p-2 shadow lato text-lg text-gray-600 font-medium gap-2"
+              className="menu menu-sm dropdown-content bg-base-100 dark:bg-[#121212] right-6 z-50 mt-3 w-52 p-2 shadow lato text-lg text-gray-600 font-medium gap-2"
             >
               {list}
+              <div className="form-control block md:hidden ml-0">
+                <label className="label cursor-pointer mt-0 pt-0">
+                  <span className="label-text text-lg text-gray-600 ml-0 dark:text-white">
+                    {darkMode ? "Light mode" : "Dark Mode"}
+                  </span>
+                  <input
+                    type="checkbox"
+                    className="toggle"
+                    onChange={handleMode}
+                    checked={darkMode}
+                  />
+                </label>
+              </div>
               {!user && (
                 <div className="flex justify-center flex-col items-center">
                   <Link to={"/login"} className="w-full">

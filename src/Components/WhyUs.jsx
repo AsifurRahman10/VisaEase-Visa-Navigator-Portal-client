@@ -16,7 +16,7 @@ export const WhyUs = () => {
   return (
     <div className="py-10 md:py-20 dark:bg-[#121212]">
       <div className="flex flex-col lg:flex-row justify-between items-center w-11/12 lg:w-9/12 mx-auto lato">
-        <div className="flex-1" data-aos="fade-right">
+        <div className="flex-1" data-aos="fade-up">
           <div className="text-center lg:text-left">
             <p className="text-xl font-semibold text-primary">Why choice us</p>
             <h2 className="text-3xl md:text-5xl font-extrabold mt-4 dark:text-white">
@@ -72,9 +72,9 @@ export const WhyUs = () => {
                 src={plane}
                 alt="Happy Customers"
                 className="rounded-lg object-cover w-full h-full"
-                data-aos="fade-down-left"
+                data-aos="fade-down"
               />
-              <div className="absolute -bottom-10 left-4 bg-primary text-white px-4 py-2 rounded-lg shadow-lg">
+              <div className="absolute -bottom-10 left-4 bg-primary text-white px-4 py-2 rounded-lg shadow-lg z-50">
                 <h2 className="text-lg font-bold">1M+ Trusted Customers</h2>
                 <div className="flex items-center mt-2">
                   <img
@@ -101,12 +101,12 @@ export const WhyUs = () => {
               <img
                 src={passport}
                 className="rounded-lg w-full h-full"
-                data-aos="fade-up-right"
+                data-aos="fade-up"
               />
               <img
                 src={happy}
                 className="rounded-lg w-full h-full"
-                data-aos="fade-up-left"
+                data-aos="flip-right"
               />
             </div>
           </div>

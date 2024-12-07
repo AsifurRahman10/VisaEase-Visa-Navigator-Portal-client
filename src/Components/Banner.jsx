@@ -9,7 +9,7 @@ import img2 from "../assets/slide-2.jpg";
 import img3 from "../assets/slide-3.jpg";
 
 // import required modules
-import { EffectFade, Navigation, Pagination, Autoplay } from "swiper/modules";
+import { EffectFade, Pagination, Autoplay } from "swiper/modules";
 
 import { BannerTitle } from "./BannerTitle";
 export const Banner = () => {
@@ -34,7 +34,7 @@ export const Banner = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent"></div>
           <div
             className="absolute inset-0 flex flex-col justify-center items-start text-white ml-12 lg:ml-32"
-            data-aos="fade-left"
+            data-aos="flip-left"
           >
             <div className="px-8 py-4 bg-primary">
               <BannerTitle></BannerTitle>
