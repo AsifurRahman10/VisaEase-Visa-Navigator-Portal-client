@@ -14,7 +14,7 @@ export const MyAddedVisas = () => {
       });
   }, [user.email, userAddedVisas]);
   return (
-    <div className="w-11/12 md:w-9/12 mx-auto py-10 lg:my-20 lato">
+    <div className="w-11/12 md:w-9/12 mx-auto py-10 lg:my-20 lato lg:min-h-[calc(100vh-564px)]">
       <Title title={"My Added Visas"}></Title>
       <div className="space-y-6 mt-10">
         {userAddedVisas.map((myVisa, index) => (

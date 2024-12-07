@@ -9,6 +9,7 @@ import { PrivateRoute } from "./PrivateRoute";
 import { VisaDetails } from "../Pages/VisaDetails";
 import { MyAddedVisas } from "../Pages/MyAddedVisas";
 import { MyAppliedVisa } from "../Pages/MyAppliedVisa";
+import { Error } from "../Pages/Error";
 
 export const router = createBrowserRouter([
   {
@@ -68,5 +69,9 @@ export const router = createBrowserRouter([
           fetch(`http://localhost:5000/allVisa/${params.id}`),
       },
     ],
+  },
+  {
+    path: "*",
+    element: <Error></Error>,
   },
 ]);

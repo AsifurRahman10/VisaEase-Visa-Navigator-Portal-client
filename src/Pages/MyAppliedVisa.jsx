@@ -33,9 +33,9 @@ export const MyAppliedVisa = () => {
       });
   };
   return (
-    <div className="py-20">
+    <div className="py-10 md:py-20 lg:min-h-[calc(100vh-404px)]">
       <Title title={"My visa application"}></Title>
-      <div className="w-9/12 mx-auto mt-10">
+      <div className="w-11/12 md:w-9/12 mx-auto mt-10">
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}
@@ -75,7 +75,7 @@ export const MyAppliedVisa = () => {
                     </div>
                   </td>
                   <td>
-                    <span className="badge badge-ghost badge-sm">
+                    <span className="badge border-none md:badge-ghost md:badge-sm">
                       {userAppliedInfo.visa_type}
                     </span>
                   </td>
