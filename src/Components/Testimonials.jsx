@@ -8,17 +8,26 @@ import "swiper/css/pagination";
 
 // import required modules
 import { Pagination, Autoplay } from "swiper/modules";
+import { Typewriter } from "react-simple-typewriter";
 
 export const Testimonials = () => {
   return (
     <div className="bg-primary py-10 md:py-20 lato">
       <div className="text-center font-bold mb-10">
-        <h2 className="text-white text-4xl md:text-6xl font-bold playfair ">
+        <h2 className="text-white text-4xl md:text-6xl font-bold playfair">
           Our Testimonials
         </h2>
         <p className="text-2xl font-semibold text-white mt-6">
           Some of the feedback we've received about our{" "}
-          <span className="text-secondary">consultancy.</span>
+          <span className="text-secondary">
+            <Typewriter
+              typeSpeed={75}
+              cursor={true}
+              loop={true}
+              cursorBlinking={true}
+              words={["consultancy."]}
+            ></Typewriter>
+          </span>
         </p>
       </div>
       <div className="w-11/12 lg:w-8/12 mx-auto mt-10">

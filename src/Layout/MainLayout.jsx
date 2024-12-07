@@ -3,7 +3,8 @@ import { Navbar } from "../Components/Navbar";
 import { Footer } from "../Components/Footer";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { HashLoader } from "react-spinners";
+import Lottie from "lottie-react";
+import plane from "../../public/loading.json";
 
 export const MainLayout = () => {
   const { loading } = useContext(AuthContext);
@@ -11,7 +12,12 @@ export const MainLayout = () => {
     return (
       <div className="w-full min-h-screen flex justify-center items-center">
         {" "}
-        <HashLoader size={100} />
+        <Lottie
+          className="w-1/2 md:w-1/3 lg:w-60"
+          animationData={plane}
+          loop={true}
+        />
+        ;
       </div>
     );
   }

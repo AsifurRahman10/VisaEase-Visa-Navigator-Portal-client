@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { HashLoader } from "react-spinners";
 import { Navigate, useLocation } from "react-router";
 
 export const PrivateRoute = ({ children }) => {

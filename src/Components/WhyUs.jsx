@@ -8,11 +8,15 @@ import avater1 from "../assets/a-1.jpg";
 import avater2 from "../assets/a-2.jpg";
 import avater3 from "../assets/a-3.jpg";
 import avater4 from "../assets/a-4.jpg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+AOS.init();
 export const WhyUs = () => {
   return (
     <div className="py-10 md:py-20 dark:bg-[#121212]">
-      <div className="flex flex-col lg:flex-row justify-between items-center w-11/12 lg:w-9/12 mx-auto lato ">
-        <div className="flex-1">
+      <div className="flex flex-col lg:flex-row justify-between items-center w-11/12 lg:w-9/12 mx-auto lato">
+        <div className="flex-1" data-aos="fade-right">
           <div className="text-center lg:text-left">
             <p className="text-xl font-semibold text-primary">Why choice us</p>
             <h2 className="text-3xl md:text-5xl font-extrabold mt-4 dark:text-white">
@@ -68,6 +72,7 @@ export const WhyUs = () => {
                 src={plane}
                 alt="Happy Customers"
                 className="rounded-lg object-cover w-full h-full"
+                data-aos="fade-down-left"
               />
               <div className="absolute -bottom-10 left-4 bg-primary text-white px-4 py-2 rounded-lg shadow-lg">
                 <h2 className="text-lg font-bold">1M+ Trusted Customers</h2>
@@ -93,8 +98,16 @@ export const WhyUs = () => {
             </div>
 
             <div className="grid col-span-2 md:col-span-2 lg:col-span-1 grid-cols-1 gap-4 w-full">
-              <img src={passport} className="rounded-lg w-full h-full" />
-              <img src={happy} className="rounded-lg w-full h-full" />
+              <img
+                src={passport}
+                className="rounded-lg w-full h-full"
+                data-aos="fade-up-right"
+              />
+              <img
+                src={happy}
+                className="rounded-lg w-full h-full"
+                data-aos="fade-up-left"
+              />
             </div>
           </div>
         </div>
