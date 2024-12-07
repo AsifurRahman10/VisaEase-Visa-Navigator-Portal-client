@@ -2,12 +2,12 @@ import { Link, NavLink } from "react-router";
 import logo from "../../public/logo-2.png";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import { themeContext } from "../Provider/ModeProvider";
 export const Navbar = () => {
   const { user, signOutUI } = useContext(AuthContext);
+  const { handleMode, darkMode } = useContext(themeContext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
-  };
+
   const handleSignOut = () => {
     signOutUI();
   };
@@ -17,8 +17,8 @@ export const Navbar = () => {
         to={"/"}
         className={({ isActive }) =>
           isActive
-            ? "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300"
-            : "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300"
+            ? "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300 dark:text-white"
+            : "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 dark:text-white"
         }
       >
         <li>Home</li>
@@ -28,8 +28,8 @@ export const Navbar = () => {
         to={"/allVisas"}
         className={({ isActive }) =>
           isActive
-            ? "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300"
-            : "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300"
+            ? "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300 dark:text-white"
+            : "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 dark:text-white"
         }
       >
         <li>All Visas</li>
@@ -38,8 +38,8 @@ export const Navbar = () => {
         to={"/addVisa"}
         className={({ isActive }) =>
           isActive
-            ? "relative underline-offset-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300"
-            : "relative underline-offset-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300"
+            ? "relative underline-offset-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300 dark:text-white"
+            : "relative underline-offset-4 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 dark:text-white"
         }
       >
         <li>Add Visa</li>
@@ -48,8 +48,8 @@ export const Navbar = () => {
         to={"/myAddedVisa"}
         className={({ isActive }) =>
           isActive
-            ? "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300"
-            : "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300"
+            ? "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300 dark:text-white"
+            : "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 dark:text-white"
         }
       >
         <li>My added visas</li>
@@ -58,8 +58,8 @@ export const Navbar = () => {
         to={"/myAppliedVisa"}
         className={({ isActive }) =>
           isActive
-            ? "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300"
-            : "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300"
+            ? "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-primary after:transition-all after:duration-300 dark:text-white"
+            : "relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-primary after:transition-all after:duration-300 dark:text-white"
         }
       >
         <li>My Visa applications</li>
@@ -67,7 +67,7 @@ export const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar px-2 md:px-10 shadow-xl">
+    <div className="navbar px-2 md:px-10 shadow-xl dark:bg-[#121212]">
       <div className="navbar-start">
         <a className="text-xl playfair flex justify-center items-center gap-2">
           <img className="w-20 md:w-24 ml-10 md:ml-0" src={logo} alt="" />
@@ -83,6 +83,20 @@ export const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        {/* dark mode toggle btn */}
+        <div className="form-control mr-6">
+          <label className="label cursor-pointer">
+            <span className="label-text mr-4 text-lg font-semibold dark:text-white">
+              {darkMode ? "Light mode" : "Dark Mode"}
+            </span>
+            <input
+              type="checkbox"
+              className="toggle"
+              onChange={handleMode}
+              checked={darkMode}
+            />
+          </label>
+        </div>
         {user?.photoURL ? (
           <div className="relative cursor-pointer mr-0 md:mr-6 lg:mr-20">
             <div className="group">
@@ -130,7 +144,7 @@ export const Navbar = () => {
             tabIndex={0}
             role="button"
             className="btn btn-ghost lg:hidden"
-            onClick={toggleDropdown}
+            onClick={handleMode}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
