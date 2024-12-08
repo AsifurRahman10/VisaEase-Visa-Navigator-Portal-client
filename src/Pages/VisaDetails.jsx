@@ -113,12 +113,10 @@ export const VisaDetails = () => {
         </div>
         <div className="flex-1 flex flex-col justify-between grow">
           <h2 className="text-2xl font-semibold mb-4">Necessary document</h2>
-          {required_documents.map((item) => (
-            <div class="flex items-center space-x-2">
+          {required_documents.map((item, idx) => (
+            <div className="flex items-center space-x-2" key={idx}>
               <IoIosCheckboxOutline className="text-3xl text-secondary" />
-              <label for="checkbox" class="text-xl text-gray-700">
-                {item}
-              </label>
+              <label className="text-xl text-gray-700">{item}</label>
             </div>
           ))}
         </div>

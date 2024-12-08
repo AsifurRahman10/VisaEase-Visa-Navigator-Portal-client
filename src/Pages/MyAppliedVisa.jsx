@@ -93,8 +93,8 @@ export const MyAppliedVisa = () => {
                 <th>Applicant's name</th>
               </tr>
             </thead>
-            {myAppliedVisas.map((userAppliedInfo) => (
-              <tbody>
+            {myAppliedVisas.map((userAppliedInfo, idx) => (
+              <tbody key={idx}>
                 {/* row 1 */}
                 <tr>
                   <td>

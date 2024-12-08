@@ -88,8 +88,8 @@ export const Modal = ({
           );
           setIsModalOpen(false);
           Swal.fire({
-            title: "Good job!",
-            text: "You clicked the button!",
+            title: "success",
+            text: "You visa information has been updated",
             icon: "success",
           });
         } else {

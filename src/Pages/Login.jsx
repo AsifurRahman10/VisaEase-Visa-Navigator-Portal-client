@@ -30,7 +30,7 @@ export const Login = () => {
       })
       .catch((err) => {
         setLoading(false);
-        const message = err.message.split(":");
+        const message = err.message.split("(")[1].split(")")[0];
         setError(message[1]);
       });
   };

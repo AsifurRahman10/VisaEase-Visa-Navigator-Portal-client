@@ -43,9 +43,7 @@ export const AllVisa = () => {
               }
             }}
           >
-            <option value="All" selected>
-              All
-            </option>
+            <option defaultValue="All">All</option>
             <option value="Student visa">Student Visa</option>
             <option value="Tourist visa">Tourist Visa</option>
             <option value="Official visa">Official Visa</option>
