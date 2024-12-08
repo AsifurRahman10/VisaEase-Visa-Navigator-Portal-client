@@ -4,7 +4,11 @@ VisaEase is a user-friendly Visa Navigator Portal designed to simplify visa mana
 
 ## Live Link
 
-The site is live at: [VisaEase](https://visaease-web.netlify.app/)
+The client site is live at: [VisaEase client](https://visaease-web.netlify.app/)
+
+## Live Link
+
+The server is live at: [VisaEase Server](https://visa-ease-server-one.vercel.app/)
 
 ## Features
 
