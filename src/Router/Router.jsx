@@ -60,18 +60,18 @@ export const router = createBrowserRouter([
         loader: ({ params }) =>
           fetch(`https://visa-ease-server-one.vercel.app/allVisa/${params.id}`),
       },
-      {
-        path: "/login",
-        element: <Login></Login>,
-      },
-      {
-        path: "/register",
-        element: <Register></Register>,
-      },
     ],
   },
   {
     path: "*",
     element: <Error></Error>,
+  },
+  {
+    path: "/login",
+    element: <Login></Login>,
+  },
+  {
+    path: "/register",
+    element: <Register></Register>,
   },
 ]);
