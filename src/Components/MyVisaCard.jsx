@@ -27,7 +27,7 @@ export const MyVisaCard = ({ myVisa, setUserAddedVisas }) => {
     }
   }, [isModalOpen, visaDetails]);
   const handleModalData = (_id) => {
-    fetch(`http://localhost:5000/allVisa/${_id}`)
+    fetch(`https://visa-ease-server-one.vercel.app/allVisa/${_id}`)
       .then((res) => res.json())
       .then((data) => {
         setVisaDetails(data);
@@ -59,7 +59,7 @@ export const MyVisaCard = ({ myVisa, setUserAddedVisas }) => {
       .then((result) => {
         if (result.isConfirmed) {
           // Call the delete API
-          fetch(`http://localhost:5000/allVisa/${_id}`, {
+          fetch(`https://visa-ease-server-one.vercel.app/allVisa/${_id}`, {
             method: "DELETE",
           })
             .then((res) => res.json())

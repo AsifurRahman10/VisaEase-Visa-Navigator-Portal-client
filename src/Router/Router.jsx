@@ -23,7 +23,7 @@ export const router = createBrowserRouter([
       {
         path: "/allVisas",
         element: <AllVisa></AllVisa>,
-        loader: () => fetch("http://localhost:5000/allVisa"),
+        loader: () => fetch("https://visa-ease-server-one.vercel.app/allVisa"),
       },
       {
         path: "/addVisa",
@@ -32,7 +32,7 @@ export const router = createBrowserRouter([
             <AddVisa></AddVisa>
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/allVisa"),
+        loader: () => fetch("https://visa-ease-server-one.vercel.app/allVisa"),
       },
       {
         path: "/myAddedVisa",
@@ -58,7 +58,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allVisa/${params.id}`),
+          fetch(`https://visa-ease-server-one.vercel.app/allVisa/${params.id}`),
       },
       {
         path: "/login",

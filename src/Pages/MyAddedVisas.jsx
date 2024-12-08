@@ -8,7 +8,7 @@ export const MyAddedVisas = () => {
   const { user } = useContext(AuthContext);
   const [userAddedVisas, setUserAddedVisas] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/allVisa?email=${user.email}`)
+    fetch(`https://visa-ease-server-one.vercel.app/allVisa?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setUserAddedVisas(data);

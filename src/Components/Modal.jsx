@@ -71,7 +71,7 @@ export const Modal = ({
       visaType,
       selectedValues,
     };
-    fetch(`http://localhost:5000/updateVisa/${_id}`, {
+    fetch(`https://visa-ease-server-one.vercel.app/updateVisa/${_id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
@@ -80,7 +80,6 @@ export const Modal = ({
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         if (data.modifiedCount > 0) {
           setUserAddedVisas((prevDetails) =>
             prevDetails.map((visa) =>

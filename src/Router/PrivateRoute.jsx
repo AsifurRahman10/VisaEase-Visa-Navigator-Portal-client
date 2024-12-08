@@ -9,7 +9,6 @@ export const PrivateRoute = ({ children }) => {
   if (loading) {
     return (
       <div className="w-full min-h-screen flex justify-center items-center">
-        {" "}
         <Lottie
           className="w-1/2 md:w-1/3 lg:w-60"
           animationData={plane}

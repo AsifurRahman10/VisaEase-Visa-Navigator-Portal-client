@@ -16,7 +16,7 @@ export const CardSmall = ({ singleVisa }) => {
         <p className="text-lg mb-4 font-medium">{visa_type}</p>
         <p className="text-sm mb-4 font-light">
           {" "}
-          <span className="font-semibold">Fee:</span> {fee}
+          <span className="font-semibold">Fee:</span> {fee} $
         </p>
         <Link to={`/visaDetails/${_id}`}>
           <button className="bg-primary text-white py-2 px-6 rounded-full hover:bg-primary-dark focus:outline-none focus:ring focus:ring-primary-light transition-colors duration-300 flex items-center">

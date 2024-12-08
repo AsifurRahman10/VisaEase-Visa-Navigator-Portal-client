@@ -7,7 +7,7 @@ import { themeContext } from "../Provider/ModeProvider";
 export const LatestVisa = () => {
   const [latestVisas, setLatestVisas] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/latestVisa")
+    fetch("https://visa-ease-server-one.vercel.app/latestVisa")
       .then((res) => res.json())
       .then((data) => {
         setLatestVisas(data);

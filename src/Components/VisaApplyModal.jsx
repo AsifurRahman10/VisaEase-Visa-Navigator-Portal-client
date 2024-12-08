@@ -44,7 +44,7 @@ export const VisaApplyModal = ({
       age_restriction,
       required_documents,
     };
-    fetch("http://localhost:5000/applyForVisa", {
+    fetch("https://visa-ease-server-one.vercel.app/applyForVisa", {
       method: "POST",
       headers: {
         "content-type": "application/json",

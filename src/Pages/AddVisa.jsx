@@ -55,7 +55,7 @@ export const AddVisa = () => {
       user_email: user?.email,
       required_documents: selectedValues,
     };
-    fetch("http://localhost:5000/addVisa", {
+    fetch("https://visa-ease-server-one.vercel.app/addVisa", {
       method: "POST",
       headers: {
         "content-type": "application/json",

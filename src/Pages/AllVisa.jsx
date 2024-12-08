@@ -37,7 +37,7 @@ export const AllVisa = () => {
             "Find the right visa for travel, study, work, or business. Get essential details and apply with ease through our VisaEase"
           }
         ></Title>
-        <div className="flex justify-end">
+        <div className="flex justify-end mt-6">
           <div className="dropdown">
             <div
               tabIndex={0}

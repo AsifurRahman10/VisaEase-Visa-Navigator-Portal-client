@@ -9,15 +9,14 @@ export const MyAppliedVisa = () => {
   const { user } = useContext(AuthContext);
   const [myAppliedVisas, setMyAppliedVisas] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/appliedVisa/${user?.email}`)
+    fetch(`https://visa-ease-server-one.vercel.app/appliedVisa/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyAppliedVisas(data);
       });
   }, []);
   const handleCancel = (_id) => {
-    console.log(_id);
-    fetch(`http://localhost:5000/cancelVisa/${_id}`, {
+    fetch(`https://visa-ease-server-one.vercel.app/cancelVisa/${_id}`, {
       method: "DELETE",
       headers: {
         "content-type": "application/json",
@@ -34,8 +33,9 @@ export const MyAppliedVisa = () => {
   };
 
   const handleSearch = (e) => {
-    console.log(e.target.value);
-    fetch(`http://localhost:5000/appliedVisa?searchParams=${e.target.value}`)
+    fetch(
+      `https://visa-ease-server-one.vercel.app/appliedVisa?searchParams=${e.target.value}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setMyAppliedVisas(data);
@@ -48,7 +48,7 @@ export const MyAppliedVisa = () => {
           <title>My applied visa - VisaEase</title>
         </Helmet>
       </HelmetProvider>
-      <div className="flex w-11/12 md:w-9/12 mx-auto mt-10 justify-between items-center">
+      <div className="flex w-11/12 flex-col lg:flex-row md:w-9/12 mx-auto lg:mt-10 justify-between items-center">
         <div>
           <Title title={"My visa application"}></Title>
         </div>
@@ -75,7 +75,7 @@ export const MyAppliedVisa = () => {
           </label>
         </div>
       </div>
-      <div className="w-11/12 md:w-9/12 mx-auto mt-10">
+      <div className="w-11/12 md:w-9/12 mx-auto mt-6 lg:mt-10">
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}
