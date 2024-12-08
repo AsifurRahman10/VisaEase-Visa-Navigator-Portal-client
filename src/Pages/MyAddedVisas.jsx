@@ -15,7 +15,7 @@ export const MyAddedVisas = () => {
       });
   }, [user.email, userAddedVisas]);
   return (
-    <div className="w-11/12 md:w-9/12 mx-auto py-10 lg:my-20 lato lg:min-h-[calc(100vh-564px)]">
+    <div className="w-11/12 md:w-9/12 mx-auto py-10 lg:my-20 lato min-h-[calc(100vh-374px)] md:min-h-[calc(100vh-390px)] lg:min-h-[calc(100vh-558px)]">
       <HelmetProvider>
         <Helmet>
           <title>My added visa - VisaEase</title>
