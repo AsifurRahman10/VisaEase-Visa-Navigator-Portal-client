@@ -43,7 +43,7 @@ export const MyAppliedVisa = () => {
       });
   };
   return (
-    <div className="py-10 lg:min-h-[calc(100vh-404px)]">
+    <div className="py-10 min-h-[calc(100vh-374px)] lg:min-h-[calc(100vh-404px)]">
       <HelmetProvider>
         <Helmet>
           <title>My applied visa - VisaEase</title>

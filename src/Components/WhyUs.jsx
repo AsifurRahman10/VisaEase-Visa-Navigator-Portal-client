@@ -70,7 +70,7 @@ export const WhyUs = () => {
             <div className="relative col-span-2">
               <img
                 src={plane}
-                alt="Happy Customers"
+                alt=""
                 className="rounded-lg object-cover w-full h-full"
                 data-aos="fade-down"
               />
@@ -105,7 +105,7 @@ export const WhyUs = () => {
               />
               <img
                 src={happy}
-                className="rounded-lg w-full h-full"
+                className="rounded-lg w-full h-full object-scale-down md:object-contain"
                 data-aos="fade-up"
               />
             </div>
