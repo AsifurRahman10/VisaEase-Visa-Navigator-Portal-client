@@ -106,7 +106,7 @@ export const WhyUs = () => {
               <img
                 src={happy}
                 className="rounded-lg w-full h-full"
-                data-aos="flip-right"
+                data-aos="fade-up"
               />
             </div>
           </div>

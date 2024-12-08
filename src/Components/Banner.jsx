@@ -14,7 +14,7 @@ import { EffectFade, Pagination, Autoplay } from "swiper/modules";
 import { BannerTitle } from "./BannerTitle";
 export const Banner = () => {
   return (
-    <div className="min-h-screen lg:max-h-[800px]">
+    <div className="max-h-full lg:max-h-[800px]">
       <Swiper
         spaceBetween={30}
         effect={"fade"}
@@ -30,7 +30,7 @@ export const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img className="min-h-screen lg:max-h-[800px] w-full" src={img1} />
+          <img className="min-h-[370px] lg:max-h-[800px] w-full" src={img3} />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent"></div>
           <div
             className="absolute inset-0 flex flex-col justify-center items-start text-white ml-12 lg:ml-32"
@@ -51,7 +51,7 @@ export const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="min-h-screen lg:max-h-[800px] w-full" src={img2} />
+          <img className="min-h-[370px] lg:max-h-[800px] w-full" src={img1} />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent"></div>
           <div className="absolute inset-0 flex flex-col justify-center items-start text-white ml-12 lg:ml-32">
             <div className="px-8 py-4 bg-primary">
@@ -66,7 +66,7 @@ export const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <img className="min-h-screen lg:max-h-[800px] w-full" src={img3} />
+          <img className="min-h-[370px] lg:max-h-[800px] w-full" src={img2} />
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/25 to-transparent"></div>
           <div className="absolute inset-0 flex flex-col justify-center items-start text-white ml-12 lg:ml-32">
             <div className="px-8 py-4 bg-primary">

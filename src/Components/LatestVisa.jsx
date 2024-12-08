@@ -16,7 +16,7 @@ export const LatestVisa = () => {
   return (
     <div className="dark:bg-[#121212] py-10 md:py-20 ">
       <div className="w-11/12 md:w-9/12 mx-auto">
-        <div className="lg:my-10">
+        <div className="lg:my-4">
           <Title
             title={"Our Latest Visas"}
             para={

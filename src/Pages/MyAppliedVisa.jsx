@@ -38,7 +38,8 @@ export const MyAppliedVisa = () => {
     )
       .then((res) => res.json())
       .then((data) => {
-        setMyAppliedVisas(data);
+        const searchItem = data.filter((item) => item.email === user.email);
+        setMyAppliedVisas(searchItem);
       });
   };
   return (
@@ -88,8 +89,8 @@ export const MyAppliedVisa = () => {
                 <th>Validity</th>
                 <th>Application method</th>
                 <th>Applied date</th>
-                <th>Applicant's name</th>
                 <th>Applicant’s email</th>
+                <th>Applicant's name</th>
               </tr>
             </thead>
             {myAppliedVisas.map((userAppliedInfo) => (
