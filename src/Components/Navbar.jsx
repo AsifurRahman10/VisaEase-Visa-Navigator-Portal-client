@@ -89,7 +89,7 @@ export const Navbar = () => {
       </div>
       <div className="navbar-end">
         {/* dark mode toggle btn */}
-        <div className="form-control mr-6 hidden md:block">
+        <div className="form-control mr-6 hidden lg:block">
           <label className="label cursor-pointer">
             <span className="label-text mr-4 text-lg font-semibold dark:text-white">
               {darkMode ? "Light mode" : "Dark Mode"}
@@ -172,7 +172,7 @@ export const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 dark:bg-[#121212] right-6 z-50 mt-3 w-52 p-2 shadow lato text-lg text-gray-600 font-medium gap-2"
             >
               {list}
-              <div className="form-control block md:hidden ml-0">
+              <div className="form-control block lg:hidden ml-0">
                 <label className="label cursor-pointer mt-0 pt-0">
                   <span className="label-text text-lg text-gray-600 ml-0 dark:text-white">
                     {darkMode ? "Light mode" : "Dark Mode"}
