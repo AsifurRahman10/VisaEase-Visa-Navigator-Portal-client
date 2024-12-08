@@ -14,15 +14,7 @@ export const AllVisa = () => {
     );
     setAllVisa(filteredData);
   };
-  const handleFilterByStudent = () => {
-    handleFilter("Student visa");
-  };
-  const handleFilterByTourist = () => {
-    handleFilter("Tourist visa");
-  };
-  const handleFilterByOfficial = () => {
-    handleFilter("Official visa");
-  };
+
   return (
     <div className="w-11/12 md:w-9/12 mx-auto my-10 md:my-20 lato">
       <HelmetProvider>
@@ -38,35 +30,26 @@ export const AllVisa = () => {
           }
         ></Title>
         <div className="flex justify-end mt-6">
-          <div className="dropdown">
-            <div
-              tabIndex={0}
-              role="button"
-              className="btn m-1 bg-primary text-white px-10 text-lg rounded-none"
-            >
-              Filter By <FaFilter />
-            </div>
-            <ul
-              tabIndex={0}
-              className="dropdown-content menu bg-[#f5f5f7] z-[1] w-full p-2 shadow text-black rounded-none"
-            >
-              <button onClick={handleFilterByStudent}>
-                <li>
-                  <a> Student Visa</a>
-                </li>
-              </button>
-              <button onClick={handleFilterByTourist}>
-                <li>
-                  <a>Tourist visa</a>
-                </li>
-              </button>
-              <button onClick={handleFilterByOfficial}>
-                <li>
-                  <a>Official visa</a>
-                </li>
-              </button>
-            </ul>
-          </div>
+          <select
+            id="visaType"
+            name="visaType"
+            className="h-10 border-2 border-primary focus:outline-none focus:border-primary text-primary rounded px-2 md:px-3 py-0 md:py-1 tracking-wider"
+            onChange={(e) => {
+              const selectedType = e.target.value;
+              if (selectedType === "All") {
+                setAllVisa(data);
+              } else {
+                handleFilter(selectedType);
+              }
+            }}
+          >
+            <option value="All" selected>
+              All
+            </option>
+            <option value="Student visa">Student Visa</option>
+            <option value="Tourist visa">Tourist Visa</option>
+            <option value="Official visa">Official Visa</option>
+          </select>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
