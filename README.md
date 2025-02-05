@@ -1,5 +1,7 @@
 # VisaEase - Visa Navigator Portal
 
+![Homepage](https://i.ibb.co.com/5XgwPXnT/li.png)
+
 VisaEase is a user-friendly Visa Navigator Portal designed to simplify visa management for users. It enables travelers to check visa requirements, view detailed visa information, apply for visas online, and track their applications effortlessly. Administrators and users can manage visas dynamically, making the platform efficient and feature-rich. The website is fully **responsive**, providing an optimized experience on desktops, tablets, and smartphones.
 
 ## Live Link
